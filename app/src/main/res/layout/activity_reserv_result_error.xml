@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ReservResultErrorActivity">
+
+    <ImageView
+        android:id="@+id/polo_logo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginEnd="171dp"
+        android:layout_marginStart="170dp"
+        android:layout_marginTop="42dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/polo_logo" />
+
+    <ImageView
+        android:id="@+id/red_tick_ic"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/polo_logo"
+        app:srcCompat="@drawable/red_cross_ic" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:orientation="vertical"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/reserve_id_tv">
+
+        <TableLayout
+            android:id="@+id/table_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:stretchColumns="1">
+
+            <TableRow
+                android:id="@+id/first_row"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border">
+
+                <TextView
+                    android:id="@+id/date_label_tv"
+                    android:layout_width="37dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/border"
+                    android:gravity="center"
+                    android:paddingBottom="7dp"
+                    android:paddingEnd="3dp"
+                    android:paddingStart="3dp"
+                    android:paddingTop="10dp"
+                    android:text="日付"
+                    android:textColor="#0F0B3C"
+                    android:textSize="22sp" />
+
+                <TextView
+                    android:id="@+id/start_time_label_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:background="@drawable/border"
+                    android:gravity="center"
+                    android:paddingBottom="7dp"
+                    android:paddingEnd="3dp"
+                    android:paddingStart="3dp"
+                    android:paddingTop="10dp"
+                    android:text="時間帯"
+                    android:textColor="#0F0B3C"
+                    android:textSize="22sp" />
+
+                <TextView
+                    android:id="@+id/end_time_label_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:background="@drawable/border"
+                    android:gravity="center"
+                    android:paddingBottom="7dp"
+                    android:paddingEnd="3dp"
+                    android:paddingStart="3dp"
+                    android:paddingTop="10dp"
+                    android:text="整理番号"
+                    android:textColor="#0F0B3C"
+                    android:textSize="22sp" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/second_row"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border">
+
+                <TextView
+                    android:id="@+id/date_tv"
+                    android:layout_width="37dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/border"
+                    android:gravity="center"
+                    android:paddingBottom="7dp"
+                    android:paddingEnd="3dp"
+                    android:paddingStart="3dp"
+                    android:paddingTop="10dp"
+                    android:textColor="#1B08EF"
+                    android:textSize="22sp" />
+
+                <TextView
+                    android:id="@+id/start_time_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:background="@drawable/border"
+                    android:gravity="center"
+                    android:paddingBottom="7dp"
+                    android:paddingEnd="3dp"
+                    android:paddingStart="3dp"
+                    android:paddingTop="10dp"
+                    android:textColor="#1B08EF"
+                    android:textSize="22sp" />
+
+                <TextView
+                    android:id="@+id/end_time_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:background="@drawable/border"
+                    android:gravity="center"
+                    android:paddingBottom="7dp"
+                    android:paddingEnd="3dp"
+                    android:paddingStart="3dp"
+                    android:paddingTop="10dp"
+                    android:textColor="#1B08EF"
+                    android:textSize="22sp" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/third_row"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border">
+
+                <TextView
+                    android:id="@+id/guest_count_tv"
+                    android:layout_width="37dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/border"
+                    android:gravity="center"
+                    android:paddingBottom="7dp"
+                    android:paddingEnd="3dp"
+                    android:paddingStart="3dp"
+                    android:paddingTop="10dp"
+                    android:textColor="#1B08EF"
+                    android:textSize="22sp" />
+
+                <TextView
+                    android:id="@+id/empty1_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:background="@drawable/border"
+                    android:gravity="center"
+                    android:paddingBottom="7dp"
+                    android:paddingEnd="3dp"
+                    android:paddingStart="3dp"
+                    android:paddingTop="10dp"
+                    android:textColor="#1B08EF"
+                    android:textSize="22sp" />
+
+                <TextView
+                    android:id="@+id/empty2_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:background="@drawable/border"
+                    android:gravity="center"
+                    android:paddingBottom="7dp"
+                    android:paddingEnd="3dp"
+                    android:paddingStart="3dp"
+                    android:paddingTop="10dp"
+                    android:textColor="#1B08EF"
+                    android:textSize="22sp" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/fourth_row"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border">
+
+                <TextView
+                    android:id="@+id/empty5_tv"
+                    android:layout_width="37dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/border"
+                    android:gravity="center"
+                    android:paddingBottom="7dp"
+                    android:paddingEnd="3dp"
+                    android:paddingStart="3dp"
+                    android:paddingTop="10dp"
+                    android:textColor="#1B08EF"
+                    android:textSize="22sp" />
+
+                <TextView
+                    android:id="@+id/empty6_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:background="@drawable/border"
+                    android:gravity="center"
+                    android:paddingBottom="7dp"
+                    android:paddingEnd="3dp"
+                    android:paddingStart="3dp"
+                    android:paddingTop="10dp"
+                    android:textColor="#1B08EF"
+                    android:textSize="22sp" />
+
+                <TextView
+                    android:id="@+id/empty7_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:background="@drawable/border"
+                    android:gravity="center"
+                    android:paddingBottom="7dp"
+                    android:paddingEnd="3dp"
+                    android:paddingStart="3dp"
+                    android:paddingTop="10dp"
+                    android:textColor="#1B08EF"
+                    android:textSize="22sp" />
+            </TableRow>
+        </TableLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/reserve_id_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="161dp"
+        android:layout_marginStart="161dp"
+        android:layout_marginTop="5dp"
+        android:text="……"
+        android:textColor="#1B08EF"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/reserve_id_label_tv" />
+
+    <TextView
+        android:id="@+id/reserve_id_label_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="予約ID"
+        android:textColor="#0F0B3C"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/red_tick_ic" />
+
+    <ImageView
+        android:id="@+id/scan_again_iv"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="23dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+        app:srcCompat="@drawable/ic_photo_camera" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,36 @@
+
+We have an App that scans QR codes and the Indian Programmer has a "Festival" on this weekend, instead of working for us even Friday.
+
+The API was urgent but the festival is even more urgent.
+
+If you can fix the APP for us so it works and scans our QR codes NOW please bid.
+Skills Required
+
+
+
+App scans a QR code
+Suppose to check server for ID
+and show in App some reservation
+User Avatar
+Then send data to server "scanned"
+ok
+User Avatar
+Currenty App gets data
+understand
+(I think)
+I need you to checl
+User Avatar
+But App dont send "scan flag" and needs work
+ok
+User Avatar
+API works and give response
+
+The main thing we need is the App sends "scan" 1 to server so we can see the code was scanned
+
+We have one problem
+QR was set with date in sthis format
+1029
+but QRs on Sunday only 111
+So I want app to add a 0 itself 1101
+User Avatar
+other days arefine
