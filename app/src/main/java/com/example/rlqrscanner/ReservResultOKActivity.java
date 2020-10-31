@@ -66,7 +66,8 @@ public class ReservResultOKActivity extends AppCompatActivity {
 
         // Setting QR data
         reserveIDTV.setText(getIntent().getStringExtra("reserveID"));
-        dateTV.setText(getIntent().getStringExtra("Date").substring(0,2) + "-" + getIntent().getStringExtra("Date").substring(2,4));
+        String date = getIntent().getStringExtra("Date");
+        if (date != null && date.length() >= 4) dateTV.setText(date.substring(0,2) + "-" + date.substring(2,4));
         startTimeTV.setText(getIntent().getStringExtra("startTime"));
         endTimeTV.setText(getIntent().getStringExtra("endTime"));
         guestCountTV.setText(getIntent().getStringExtra("GuestCount"));

@@ -13,12 +13,25 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    signingConfigs {
+        release {
+            // These must be set or Gradle will complain (even if they are overridden).
+            keyAlias = "android"
+            keyPassword = "android" // And these must be set to non-empty in order to have the signing step added to the task graph.
+            storeFile = file("android.keystore")
+            storePassword = "android"
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
         }
     }
+
+
 }
 
 dependencies {
