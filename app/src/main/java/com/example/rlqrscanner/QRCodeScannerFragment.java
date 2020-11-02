@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 import android.graphics.Color;
 import com.android.volley.AuthFailureError;
@@ -137,12 +138,9 @@ public class QRCodeScannerFragment extends Fragment implements ZXingScannerView.
 
     private void checkReservationIDFromServer()
     {
-
         progressDialog = new ProgressDialog(getActivity() , R.style.MyAlertDialogStyle);
-        progressDialog.show(getActivity(), null,"確認中...",
-                true,false);
-        //drawable.setColorFilter(new LightingColorFilter(0xFF000000, customColorInt));setProgressStyle(ProgressDialog.STYLE_SPINNER)
-        //progressDialog.getIndeterminateDrawable().setColorFilter(Color.parseColor("#C60000"), android.graphics.PorterDuff.Mode.SRC_IN);
+        progressDialog.setMessage("確認中...");
+        progressDialog.show();
 
         com.android.volley.RequestQueue requestQueue = Volley.newRequestQueue(getContext());
         StringRequest myReq = new StringRequest(Request.Method.POST, serverURL, new Response.Listener<String>()
