@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">RL QR Scanner</string>
+    <string name="re_id">セールID</string>
 </resources>

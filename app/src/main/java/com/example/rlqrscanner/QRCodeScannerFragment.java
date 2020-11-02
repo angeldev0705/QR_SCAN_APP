@@ -1,13 +1,17 @@
 package com.example.rlqrscanner;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
 import android.os.Bundle;
+import android.os.CountDownTimer;
+import android.os.Handler;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
-
+import android.graphics.Color;
 import com.android.volley.AuthFailureError;
 import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.NetworkError;
@@ -20,7 +24,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.Result;
-
+import android.graphics.drawable.Drawable;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.JSONStringer;
@@ -29,6 +33,8 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import me.dm7.barcodescanner.zxing.ZXingScannerView;
 
@@ -46,6 +52,9 @@ public class QRCodeScannerFragment extends Fragment implements ZXingScannerView.
     String startTime = "";
     String endTime = "";
 
+    int count = 0;
+    CountDownTimer timer;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
@@ -55,12 +64,29 @@ public class QRCodeScannerFragment extends Fragment implements ZXingScannerView.
         mScannerView.setAspectTolerance(0.5f);
         mScannerView.setSoundEffectsEnabled(true);
 
+
+        timer = new CountDownTimer(100000,1000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                Log.e("AAAAAAAAAAAA", "BBBBBBBBB  " + String.valueOf(count));
+                count ++;
+                if (count >= 90) {
+                    this.cancel();
+                    getActivity().finish();
+                }
+            }
+            @Override
+            public void onFinish() {
+            }
+        };
+        timer.start();
         return mScannerView;
     }
 
     @Override
     public void handleResult(Result rawResult)
     {
+        count = 0;
         if (rawResult == null || rawResult.getText().isEmpty())
         {
             Toast.makeText(getContext(), "No Data Found!", Toast.LENGTH_LONG).show();
@@ -72,6 +98,8 @@ public class QRCodeScannerFragment extends Fragment implements ZXingScannerView.
 
             QRData = rawResult.getText().split("-");
             checkReservationIDFromServer();
+
+            timer.cancel();
         }
     }
 
@@ -109,8 +137,12 @@ public class QRCodeScannerFragment extends Fragment implements ZXingScannerView.
 
     private void checkReservationIDFromServer()
     {
-        progressDialog = ProgressDialog.show(getActivity(),null,"Checking ID...",
-                false,false);
+
+        progressDialog = new ProgressDialog(getActivity() , R.style.MyAlertDialogStyle);
+        progressDialog.show(getActivity(), null,"確認中...",
+                true,false);
+        //drawable.setColorFilter(new LightingColorFilter(0xFF000000, customColorInt));setProgressStyle(ProgressDialog.STYLE_SPINNER)
+        //progressDialog.getIndeterminateDrawable().setColorFilter(Color.parseColor("#C60000"), android.graphics.PorterDuff.Mode.SRC_IN);
 
         com.android.volley.RequestQueue requestQueue = Volley.newRequestQueue(getContext());
         StringRequest myReq = new StringRequest(Request.Method.POST, serverURL, new Response.Listener<String>()
@@ -136,6 +168,8 @@ public class QRCodeScannerFragment extends Fragment implements ZXingScannerView.
                         JSONObject data = jsonObject.getJSONObject("data");
                         date = data.getString("date");
                         if (date.equals("111")) date = "1101";
+                        if (date.equals("116")) date = "1106";
+                        if (date.equals("117")) date = "1107";
                         startTime = data.getString("start_time");
                         endTime = data.getString("finish_time");
 

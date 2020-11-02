@@ -30,13 +30,15 @@
 
     <ImageView
         android:id="@+id/scan_again_iv"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="300dp"
+        android:layout_height="90dp"
         android:layout_marginTop="10dp"
+        android:layout_marginBottom="85dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/total_label_tv"
-        app:srcCompat="@drawable/ic_photo_camera" />
+        app:srcCompat="@drawable/ic_photo_camera1" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -173,11 +175,11 @@
                     android:layout_weight="1"
                     android:background="@drawable/border"
                     android:gravity="center"
-                    android:paddingBottom="7dp"
-                    android:paddingEnd="3dp"
                     android:paddingStart="3dp"
                     android:paddingTop="10dp"
-                    android:text="ゲスト数"
+                    android:paddingEnd="3dp"
+                    android:paddingBottom="7dp"
+                    android:text="同伴者数   "
                     android:textColor="#000000"
                     android:textSize="22sp" />
 
@@ -216,18 +218,35 @@
                 android:background="@drawable/border">
 
                 <TextView
-                    android:id="@+id/event_id_tv"
+                    android:id="@+id/empty3_tv"
                     android:layout_width="37dp"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:background="@drawable/border"
                     android:gravity="center"
-                    android:paddingBottom="7dp"
-                    android:paddingEnd="3dp"
                     android:paddingStart="3dp"
                     android:paddingTop="10dp"
-                    android:textColor="#1B08EF"
+                    android:paddingEnd="3dp"
+                    android:paddingBottom="7dp"
+                    android:text="@string/re_id"
+                    android:textColor="#090909"
                     android:textSize="22sp"
-                    android:layout_weight="1"/>
+                    android:visibility="visible"
+                    tools:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/event_id_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:background="@drawable/border"
+                    android:gravity="center"
+                    android:paddingStart="3dp"
+                    android:paddingTop="10dp"
+                    android:paddingEnd="3dp"
+                    android:paddingBottom="7dp"
+                    android:textColor="#1B08EF"
+                    android:textSize="22sp" />
 
                 <TextView
                     android:id="@+id/empty2_tv"
@@ -236,30 +255,15 @@
                     android:layout_weight="2"
                     android:background="@drawable/border"
                     android:gravity="center"
-                    android:paddingBottom="7dp"
-                    android:paddingEnd="3dp"
                     android:paddingStart="3dp"
                     android:paddingTop="10dp"
-                    android:text=""
+                    android:paddingEnd="3dp"
+                    android:paddingBottom="7dp"
                     android:textColor="#1B08EF"
                     android:textSize="22sp"
-                    android:visibility="invisible" />
+                    android:visibility="visible" />
 
-                <TextView
-                    android:id="@+id/empty3_tv"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/border"
-                    android:layout_weight="2"
-                    android:gravity="center"
-                    android:paddingBottom="7dp"
-                    android:paddingEnd="3dp"
-                    android:paddingStart="3dp"
-                    android:paddingTop="10dp"
-                    android:text=""
-                    android:textColor="#1B08EF"
-                    android:textSize="22sp"
-                    android:visibility="invisible" />
+
             </TableRow>
         </TableLayout>
     </LinearLayout>
@@ -315,5 +319,25 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/reserve_id_label_tv" />
+
+    <Button
+        android:id="@+id/backbutton"
+        style="@android:style/Widget.DeviceDefault.Light.Button.Toggle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="35dp"
+        android:backgroundTint="#110D42"
+        android:backgroundTintMode="multiply"
+        android:bottomLeftRadius="20dp"
+        android:bottomRightRadius="20dp"
+        android:text="戻る"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="#FDFCFF"
+        android:textSize="25sp"
+        android:topLeftRadius="40dp"
+        android:topRightRadius="40dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
