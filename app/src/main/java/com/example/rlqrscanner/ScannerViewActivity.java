@@ -10,7 +10,5 @@ public class ScannerViewActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scanner_view);
 
-//        QRCodeScannerFragment scanner = (QRCodeScannerFragment)getFragmentManager().findFragmentById(R.id.scanner_fragment);
-
     }
 }

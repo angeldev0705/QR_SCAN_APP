@@ -1,18 +1,13 @@
 package com.example.rlqrscanner;
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
 import android.os.Bundle;
 import android.os.CountDownTimer;
-import android.os.Handler;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ProgressBar;
 import android.widget.Toast;
-import android.graphics.Color;
 import com.android.volley.AuthFailureError;
 import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.NetworkError;
@@ -25,17 +20,11 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.Result;
-import android.graphics.drawable.Drawable;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.json.JSONStringer;
-
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import me.dm7.barcodescanner.zxing.ZXingScannerView;
 
@@ -94,7 +83,6 @@ public class QRCodeScannerFragment extends Fragment implements ZXingScannerView.
         }
         else
         {
-            //Toast.makeText(getContext(), rawResult.getText(), Toast.LENGTH_LONG).show();
             Log.i("QR result", rawResult.getText());
 
             QRData = rawResult.getText().split("-");
@@ -108,11 +96,8 @@ public class QRCodeScannerFragment extends Fragment implements ZXingScannerView.
     {
         Intent reservResultOKActivity = new Intent(getActivity(), ReservResultOKActivity.class);
         reservResultOKActivity.putExtra("reserveID", QRData[0]);
-        //reservResultOKActivity.putExtra("Date", QRData[1]);
-        reservResultOKActivity.putExtra("Date", date);
-        //reservResultOKActivity.putExtra("startTime", QRData[2]);
+         reservResultOKActivity.putExtra("Date", date);
         reservResultOKActivity.putExtra("startTime", startTime);
-        //reservResultOKActivity.putExtra("endTime", QRData[3]);
         reservResultOKActivity.putExtra("endTime", endTime);
         reservResultOKActivity.putExtra("eventID", QRData[4]);
         reservResultOKActivity.putExtra("pattern", QRData[5]);
@@ -124,15 +109,9 @@ public class QRCodeScannerFragment extends Fragment implements ZXingScannerView.
     {
         Intent reservResultErrorActivity = new Intent(getActivity(), ReservResultErrorActivity.class);
         reservResultErrorActivity.putExtra("reserveID", QRData[0]);
-        //reservResultErrorActivity.putExtra("Date", QRData[1]);
         reservResultErrorActivity.putExtra("Date", date);
-        //reservResultErrorActivity.putExtra("startTime", QRData[2]);
         reservResultErrorActivity.putExtra("startTime", startTime);
-        //reservResultErrorActivity.putExtra("endTime", QRData[3]);
         reservResultErrorActivity.putExtra("endTime", endTime);
-//        reservResultErrorActivity.putExtra("eventID", QRData[4]);
-//        reservResultErrorActivity.putExtra("pattern", QRData[5]);
-//        reservResultErrorActivity.putExtra("GuestCount", QRData[6]);
         startActivity(reservResultErrorActivity);
     }
 

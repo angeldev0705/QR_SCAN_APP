@@ -3,18 +3,20 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
+import android.widget.Button;
 
 public class ReservResultOKActivity extends AppCompatActivity {
 
     TextView reserveIDTV;
     TableLayout tableLayout;
     ImageView scanAgainIV;
-
+    Button b1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +36,16 @@ public class ReservResultOKActivity extends AppCompatActivity {
                 startActivity(goToScanningViewActivity);
             }
         });
+        b1 = (Button) findViewById(R.id.backbutton);
+        b1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view)
+            {
+                Intent goToScanningViewActivity = new Intent(ReservResultOKActivity.this, ScannerViewActivity.class);
+                startActivity(goToScanningViewActivity);
+            }
+        });
+
     }
 
     private void showQRData()
@@ -72,7 +84,6 @@ public class ReservResultOKActivity extends AppCompatActivity {
         endTimeTV.setText(getIntent().getStringExtra("endTime"));
         guestCountTV.setText(getIntent().getStringExtra("GuestCount"));
         eventIDTV.setText(getIntent().getStringExtra("eventID"));
-        //empty2TV.setText(getIntent().getStringExtra("eventID"));
-        //empty3TV.setText(getIntent().getStringExtra("eventID"));
+
     }
 }
