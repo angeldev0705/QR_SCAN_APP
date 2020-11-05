@@ -16,6 +16,7 @@ public class ReservResultOKActivity extends AppCompatActivity {
     TextView reserveIDTV;
     TableLayout tableLayout;
     ImageView scanAgainIV;
+    ImageView backImage;
     Button b1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +26,7 @@ public class ReservResultOKActivity extends AppCompatActivity {
         reserveIDTV = (TextView) findViewById(R.id.reserve_id_tv);
         tableLayout = (TableLayout) findViewById(R.id.table_layout);
         scanAgainIV = (ImageView) findViewById(R.id.scan_again_iv);
-
+        backImage  = (ImageView) findViewById(R.id.backimage);
         showQRData();
 
         scanAgainIV.setOnClickListener(new View.OnClickListener() {
@@ -36,8 +37,7 @@ public class ReservResultOKActivity extends AppCompatActivity {
                 startActivity(goToScanningViewActivity);
             }
         });
-        b1 = (Button) findViewById(R.id.backbutton);
-        b1.setOnClickListener(new View.OnClickListener() {
+        backImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view)
             {
@@ -45,6 +45,16 @@ public class ReservResultOKActivity extends AppCompatActivity {
                 startActivity(goToScanningViewActivity);
             }
         });
+
+//        b1 = (Button) findViewById(R.id.backbutton);
+//        b1.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view)
+//            {
+//                Intent goToScanningViewActivity = new Intent(ReservResultOKActivity.this, ScannerViewActivity.class);
+//                startActivity(goToScanningViewActivity);
+//            }
+//        });
 
     }
 

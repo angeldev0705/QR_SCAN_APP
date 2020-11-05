@@ -38,7 +38,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/total_label_tv"
-        app:srcCompat="@drawable/ic_photo_camera1" />
+        app:srcCompat="@drawable/ic_photo_camera" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -179,7 +179,7 @@
                     android:paddingTop="10dp"
                     android:paddingEnd="3dp"
                     android:paddingBottom="7dp"
-                    android:text="同伴者数   "
+                    android:text="同伴者"
                     android:textColor="#000000"
                     android:textSize="22sp" />
 
@@ -320,24 +320,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/reserve_id_label_tv" />
 
-    <Button
-        android:id="@+id/backbutton"
-        style="@android:style/Widget.DeviceDefault.Light.Button.Toggle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="35dp"
-        android:backgroundTint="#110D42"
-        android:backgroundTintMode="multiply"
-        android:bottomLeftRadius="20dp"
-        android:bottomRightRadius="20dp"
-        android:text="戻る"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColor="#FDFCFF"
-        android:textSize="25sp"
-        android:topLeftRadius="40dp"
-        android:topRightRadius="40dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <ImageView
+        android:id="@+id/backimage"
+        android:layout_width="129dp"
+        android:layout_height="74dp"
+        android:layout_marginTop="48dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/img_20201103"
+        tools:layout_editor_absoluteX="0dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

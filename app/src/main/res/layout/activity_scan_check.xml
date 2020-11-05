@@ -25,10 +25,12 @@
         android:layout_marginStart="155dp"
         android:layout_marginTop="80dp"
         android:layout_marginEnd="156dp"
+        android:layout_marginBottom="32dp"
+        app:layout_constraintBottom_toTopOf="@+id/scan_qr_code_tv"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_view1"
-        app:srcCompat="@drawable/ic_photo_camera1" />
+        app:srcCompat="@drawable/ic_photo_camera" />
 
     <TextView
         android:id="@+id/scan_qr_code_tv"
