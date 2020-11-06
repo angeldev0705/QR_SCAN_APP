@@ -38,16 +38,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/total_label_tv"
-        app:srcCompat="@drawable/ic_photo_camera" />
+        app:srcCompat="@drawable/ic_photo_camera11" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="5dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="10dp"
         android:orientation="vertical"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/total_label_tv"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -68,18 +72,19 @@
 
                 <TextView
                     android:id="@+id/date_label_tv"
-                    android:layout_width="37dp"
+                    android:layout_width="60dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="@drawable/border"
                     android:gravity="center"
-                    android:paddingBottom="7dp"
-                    android:paddingEnd="3dp"
                     android:paddingStart="3dp"
                     android:paddingTop="10dp"
+                    android:paddingEnd="3dp"
+                    android:paddingBottom="7dp"
                     android:text="日付"
                     android:textColor="#0F0B3C"
-                    android:textSize="22sp" />
+                    android:textSize="22sp"
+                    />
 
                 <TextView
                     android:id="@+id/start_time_label_tv"
@@ -88,13 +93,14 @@
                     android:layout_weight="2"
                     android:background="@drawable/border"
                     android:gravity="center"
-                    android:paddingBottom="7dp"
-                    android:paddingEnd="3dp"
                     android:paddingStart="3dp"
                     android:paddingTop="10dp"
+                    android:paddingEnd="3dp"
+                    android:paddingBottom="7dp"
                     android:text="時間帯"
                     android:textColor="#0F0B3C"
-                    android:textSize="22sp" />
+                    android:textSize="22sp"
+                    android:visibility="visible"/>
 
                 <TextView
                     android:id="@+id/end_time_label_tv"
@@ -103,13 +109,14 @@
                     android:layout_weight="2"
                     android:background="@drawable/border"
                     android:gravity="center"
-                    android:paddingBottom="7dp"
-                    android:paddingEnd="3dp"
                     android:paddingStart="3dp"
                     android:paddingTop="10dp"
+                    android:paddingEnd="3dp"
+                    android:paddingBottom="7dp"
                     android:text="整理番号"
                     android:textColor="#0F0B3C"
-                    android:textSize="22sp" />
+                    android:textSize="22sp"
+                    android:visibility="visible" />
             </TableRow>
 
             <TableRow
@@ -120,17 +127,19 @@
 
                 <TextView
                     android:id="@+id/date_tv"
-                    android:layout_width="37dp"
+                    android:layout_width="60dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="@drawable/border"
                     android:gravity="center"
-                    android:paddingBottom="7dp"
-                    android:paddingEnd="3dp"
                     android:paddingStart="3dp"
                     android:paddingTop="10dp"
+                    android:paddingEnd="3dp"
+                    android:paddingBottom="7dp"
                     android:textColor="#1B08EF"
-                    android:textSize="22sp" />
+                    android:textSize="22sp"
+                    android:visibility="visible"/>
+
 
                 <TextView
                     android:id="@+id/start_time_tv"
@@ -139,12 +148,13 @@
                     android:layout_weight="2"
                     android:background="@drawable/border"
                     android:gravity="center"
-                    android:paddingBottom="7dp"
-                    android:paddingEnd="3dp"
                     android:paddingStart="3dp"
                     android:paddingTop="10dp"
+                    android:paddingEnd="3dp"
+                    android:paddingBottom="7dp"
                     android:textColor="#1B08EF"
-                    android:textSize="22sp" />
+                    android:textSize="22sp"
+                    android:visibility="visible" />
 
                 <TextView
                     android:id="@+id/end_time_tv"
@@ -153,13 +163,13 @@
                     android:layout_weight="2"
                     android:background="@drawable/border"
                     android:gravity="center"
-                    android:paddingBottom="7dp"
-                    android:paddingEnd="3dp"
                     android:paddingStart="3dp"
                     android:paddingTop="10dp"
+                    android:paddingEnd="3dp"
+                    android:paddingBottom="7dp"
                     android:textColor="#1B08EF"
                     android:textSize="22sp"
-                    android:visibility="invisible" />
+                    android:visibility="visible" />
             </TableRow>
 
             <TableRow
@@ -170,7 +180,7 @@
 
                 <TextView
                     android:id="@+id/guest_count_label_tv"
-                    android:layout_width="37dp"
+                    android:layout_width="60dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="@drawable/border"
@@ -181,7 +191,8 @@
                     android:paddingBottom="7dp"
                     android:text="同伴者"
                     android:textColor="#000000"
-                    android:textSize="22sp" />
+                    android:textSize="22sp"
+                    android:visibility="visible"/>
 
                 <TextView
                     android:id="@+id/guest_count_tv"
@@ -190,12 +201,13 @@
                     android:layout_weight="2"
                     android:background="@drawable/border"
                     android:gravity="center"
-                    android:paddingBottom="7dp"
-                    android:paddingEnd="3dp"
                     android:paddingStart="3dp"
                     android:paddingTop="10dp"
+                    android:paddingEnd="3dp"
+                    android:paddingBottom="7dp"
                     android:textColor="#1B08EF"
-                    android:textSize="22sp" />
+                    android:textSize="22sp"
+                    android:visibility="visible"/>
 
                 <TextView
                     android:id="@+id/empty1_tv"
@@ -204,11 +216,12 @@
                     android:layout_weight="2"
                     android:background="@drawable/border"
                     android:gravity="center"
-                    android:paddingBottom="7dp"
-                    android:paddingEnd="3dp"
                     android:paddingStart="3dp"
                     android:paddingTop="10dp"
-                    android:textSize="22sp" />
+                    android:paddingEnd="3dp"
+                    android:paddingBottom="7dp"
+                    android:textSize="22sp"
+                    android:visibility="visible"/>
             </TableRow>
 
             <TableRow
@@ -219,7 +232,7 @@
 
                 <TextView
                     android:id="@+id/empty3_tv"
-                    android:layout_width="37dp"
+                    android:layout_width="60dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="@drawable/border"
@@ -246,7 +259,8 @@
                     android:paddingEnd="3dp"
                     android:paddingBottom="7dp"
                     android:textColor="#1B08EF"
-                    android:textSize="22sp" />
+                    android:textSize="22sp"
+                    android:visibility="visible"/>
 
                 <TextView
                     android:id="@+id/empty2_tv"

@@ -8,7 +8,7 @@ android {
         applicationId "com.example.rlqrscanner"
         minSdkVersion 21
         versionCode 101
-        versionName "1.2.3:2020.11.02"
+        versionName "V 1.1 (10) "
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
