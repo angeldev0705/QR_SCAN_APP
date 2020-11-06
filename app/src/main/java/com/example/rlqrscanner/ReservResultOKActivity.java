@@ -91,7 +91,7 @@ public class ReservResultOKActivity extends AppCompatActivity {
         String date = getIntent().getStringExtra("Date");
         if (date != null && date.length() >= 4) dateTV.setText(date.substring(0,2) + "月" + date.substring(2,4)+ "日" );
         startTimeTV.setText(getIntent().getStringExtra("startTime"));
-        endTimeTV.setText(getIntent().getStringExtra("endTime"));
+//        endTimeTV.setText(getIntent().getStringExtra("endTime"));
         guestCountTV.setText(getIntent().getStringExtra("GuestCount"));
         eventIDTV.setText(getIntent().getStringExtra("eventID"));
 
