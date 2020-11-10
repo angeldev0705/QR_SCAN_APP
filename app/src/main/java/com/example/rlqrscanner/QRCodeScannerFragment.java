@@ -72,7 +72,18 @@ public class QRCodeScannerFragment extends Fragment implements ZXingScannerView.
         timer.start();
         return mScannerView;
     }
-
+    private void noteservResultOKActivity()
+    {
+        Intent reservResultOKActivity = new Intent(getActivity(), ReservResultOKActivity.class);
+        reservResultOKActivity.putExtra("reserveID", QRData[0]);
+        reservResultOKActivity.putExtra("Date", QRData[1]);
+        reservResultOKActivity.putExtra("startTime", QRData[2]);
+        reservResultOKActivity.putExtra("endTime", endTime);
+        reservResultOKActivity.putExtra("eventID", QRData[4]);
+        reservResultOKActivity.putExtra("pattern", QRData[5]);
+        reservResultOKActivity.putExtra("GuestCount", QRData[6]);
+        startActivity(reservResultOKActivity);
+    }
     @Override
     public void handleResult(Result rawResult)
     {
@@ -86,7 +97,8 @@ public class QRCodeScannerFragment extends Fragment implements ZXingScannerView.
             Log.i("QR result", rawResult.getText());
 
             QRData = rawResult.getText().split("-");
-            checkReservationIDFromServer();
+            //noteservResultOKActivity();
+           checkReservationIDFromServer();
 
             timer.cancel();
         }
@@ -96,7 +108,7 @@ public class QRCodeScannerFragment extends Fragment implements ZXingScannerView.
     {
         Intent reservResultOKActivity = new Intent(getActivity(), ReservResultOKActivity.class);
         reservResultOKActivity.putExtra("reserveID", QRData[0]);
-         reservResultOKActivity.putExtra("Date", date);
+        reservResultOKActivity.putExtra("Date", date);
         reservResultOKActivity.putExtra("startTime", startTime);
         reservResultOKActivity.putExtra("endTime", endTime);
         reservResultOKActivity.putExtra("eventID", QRData[4]);
@@ -107,6 +119,7 @@ public class QRCodeScannerFragment extends Fragment implements ZXingScannerView.
 
     private void goToReservResultErrorActivity()
     {
+
         Intent reservResultErrorActivity = new Intent(getActivity(), ReservResultErrorActivity.class);
         reservResultErrorActivity.putExtra("reserveID", QRData[0]);
         reservResultErrorActivity.putExtra("Date", date);
@@ -120,8 +133,9 @@ public class QRCodeScannerFragment extends Fragment implements ZXingScannerView.
         progressDialog = new ProgressDialog(getActivity() , R.style.MyAlertDialogStyle);
         progressDialog.setMessage("確認中...");
         progressDialog.show();
-
         com.android.volley.RequestQueue requestQueue = Volley.newRequestQueue(getContext());
+
+
         StringRequest myReq = new StringRequest(Request.Method.POST, serverURL, new Response.Listener<String>()
         {
             @Override
@@ -151,8 +165,10 @@ public class QRCodeScannerFragment extends Fragment implements ZXingScannerView.
                         endTime = data.getString("finish_time");
 
                         Log.i("data", data.toString());
-                        progressDialog.dismiss();
+                      // progressDialog.dismiss();
                         goToReservResultOKActivity();
+
+
                     }
                     else if (success == false)
                     {
@@ -161,8 +177,9 @@ public class QRCodeScannerFragment extends Fragment implements ZXingScannerView.
 
                         if (message.equals("no exist"))
                         {
-                            progressDialog.dismiss();
+
                             goToReservResultErrorActivity();
+                            progressDialog.dismiss();
                         }
                     }
                 }

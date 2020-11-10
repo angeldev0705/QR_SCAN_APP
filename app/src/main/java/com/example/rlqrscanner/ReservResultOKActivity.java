@@ -46,16 +46,6 @@ public class ReservResultOKActivity extends AppCompatActivity {
             }
         });
 
-//        b1 = (Button) findViewById(R.id.backbutton);
-//        b1.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view)
-//            {
-//                Intent goToScanningViewActivity = new Intent(ReservResultOKActivity.this, ScannerViewActivity.class);
-//                startActivity(goToScanningViewActivity);
-//            }
-//        });
-
     }
 
     private void showQRData()
@@ -91,7 +81,8 @@ public class ReservResultOKActivity extends AppCompatActivity {
         String date = getIntent().getStringExtra("Date");
         if (date != null && date.length() >= 4) dateTV.setText(date.substring(0,2) + "月" + date.substring(2,4)+ "日" );
         startTimeTV.setText(getIntent().getStringExtra("startTime"));
-//        endTimeTV.setText(getIntent().getStringExtra("endTime"));
+        //dateTV.setText(getIntent().getStringExtra("date_tv"));
+        //endTimeTV.setText(getIntent().getStringExtra("endTime"));
         guestCountTV.setText(getIntent().getStringExtra("GuestCount"));
         eventIDTV.setText(getIntent().getStringExtra("eventID"));
 

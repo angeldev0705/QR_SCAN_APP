@@ -31,7 +31,6 @@ public class ScanCheckActivity extends AppCompatActivity {
 
         cameraIV = (ImageView) findViewById(R.id.camera_iv);
         scanQRCodeTV = (TextView) findViewById(R.id.scan_qr_code_tv);
-
         cameraIV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view)

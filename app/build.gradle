@@ -4,12 +4,12 @@ android {
     compileSdkVersion 30
     buildToolsVersion "30.0.2"
 
+
     defaultConfig {
         applicationId "com.example.rlqrscanner"
         minSdkVersion 21
-        versionCode 101
-        versionName "V 1.1 (10) "
-
+        versionCode 12
+        versionName "V 1.1" + "("+ versionCode+")"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
